@@ -22,7 +22,7 @@ public class Personnes {
     }
     public Personnes(){
         this.liste = FXCollections.observableArrayList();
-        this.liste.add(new Personne("paul.durant", "tototo", "Paul Durant", "5, rue du pont", "", "0606060606"));
+        this.liste.add(new Personne("p", "to", "Paul Durant", "5, rue du pont", "", "0606060606"));
         this.liste.add(new Personne("paul.dupont", "tatata", "Paul Dupont", "5, rue du pont", "", "0606060606"));
     }
     
