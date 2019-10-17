@@ -6,7 +6,9 @@
 package com.mycompany.projetjavafx1;
 
 import java.time.LocalDateTime;
+import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -24,16 +26,47 @@ public class Personne {
     private final StringProperty adresse2 = new SimpleStringProperty();
     private final StringProperty villeCP = new SimpleStringProperty();
     private final StringProperty tel1 = new SimpleStringProperty();
+    private final StringProperty yeux = new SimpleStringProperty();
+    private final StringProperty peau = new SimpleStringProperty();
+    private final IntegerProperty longueur = new SimpleIntegerProperty();
+    private final IntegerProperty largeur = new SimpleIntegerProperty();
 
-    private String getLogin(){
+    public String getLogin(){
         return login.get();
     }
+    public String getYeux(){
+        return yeux.get();
+    }
+    public StringProperty yeuxProperty(){
+        return yeux;
+    }
+    public String getPeau(){
+        return peau.get();
+    }
+    public StringProperty peauProperty(){
+        return peau;
+    }
     
-    private void setLogin(String value){
+    public Integer getLongueur(){
+        return longueur.get();
+    }
+    public IntegerProperty longueurProperty(){
+        return longueur;
+    }
+    
+    public Integer getLargeur(){
+        return largeur.get();
+    }
+    public IntegerProperty largeurProperty(){
+        return largeur;
+    }
+    
+    
+    public void setLogin(String value){
         login.set(value);
     }
     
-    private StringProperty loginProperty(){
+    public StringProperty loginProperty(){
         return login;
     }
     

@@ -71,6 +71,7 @@ public class LoginController implements Initializable {
             //System.out.println("Root:"+rootLayoot);
             NouvelleController controller = loader.getController();
             System.out.println("Controller:"+controller);
+            ContexteAvatar contexte = new ContexteAvatar(personneConnectee);
             controller.setContexte(contexte);
             Scene scene = new Scene(rootLayoot,1000,600);
             stage.setScene(scene);
