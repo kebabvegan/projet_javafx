@@ -37,6 +37,12 @@ public class Personne {
     public String getYeux(){
         return yeux.get();
     }
+    public String getNom(){
+       return nom.get();
+    }
+    public String getAdresse(){
+        return adresse1.get();
+    }
     public StringProperty yeuxProperty(){
         return yeux;
     }

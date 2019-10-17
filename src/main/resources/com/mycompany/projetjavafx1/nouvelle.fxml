@@ -65,7 +65,7 @@
                      </children>
                   </GridPane>
                   <ComboBox fx:id="combobox" prefWidth="150.0" GridPane.columnIndex="1" />
-                  <ListView fx:id="listview" onEditStart="#peau" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ListView fx:id="listview" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
             <GridPane prefHeight="572.0" prefWidth="398.0" GridPane.columnIndex="1">

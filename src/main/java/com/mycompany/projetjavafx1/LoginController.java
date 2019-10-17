@@ -61,7 +61,7 @@ public class LoginController implements Initializable {
         if (personneConnectee != null){
             Stage stage = (Stage)this.login.getScene().getWindow(); //Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, e);
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(App.class.getResource("nouvelle.fxml"));
+            loader.setLocation(App.class.getResource("accueil.fxml"));
             AnchorPane rootLayoot=null;
             try {
                 rootLayoot = (AnchorPane) loader.load();
@@ -69,10 +69,8 @@ public class LoginController implements Initializable {
                 ex.printStackTrace();
             }
             //System.out.println("Root:"+rootLayoot);
-            NouvelleController controller = loader.getController();
-            System.out.println("Controller:"+controller);
-            ContexteAvatar contexte = new ContexteAvatar(personneConnectee);
-            controller.setContexte(contexte);
+            AccueilController controller = loader.getController();
+            controller.setContexte(this.contexte, new ContexteAvatar(personneConnectee));
             Scene scene = new Scene(rootLayoot,1000,600);
             stage.setScene(scene);
             stage.centerOnScreen();

@@ -155,8 +155,5 @@ public class NouvelleController implements Initializable {
         
     }
 
-    @FXML
-    private void peau(ListView.EditEvent<T> event) {
-    }
-    
+
 }
