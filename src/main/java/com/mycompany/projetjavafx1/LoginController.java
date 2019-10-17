@@ -14,11 +14,15 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
 
 /**
@@ -69,10 +73,10 @@ public class LoginController implements Initializable {
                 ex.printStackTrace();
             }
             //System.out.println("Root:"+rootLayoot);
-            NouvelleController controller = loader.getController();
+            NouvelleController controller = loader.getController();         
             System.out.println("Controller:"+controller);
             controller.setContexte(contexte);
-            Scene scene = new Scene(rootLayoot,1000,600);
+            Scene scene = new Scene(rootLayoot);
             stage.setScene(scene);
             stage.centerOnScreen();
         }
