@@ -8,6 +8,7 @@ package com.mycompany.projetjavafx1;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -25,7 +26,10 @@ import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -48,13 +52,27 @@ public class AccueilController implements Initializable {
     
     private ContexteAvatar contexte;
     private ContexteIdentification contexteId;
+    @FXML
+    private TableView<Personne> tableview;
+    @FXML
+    private TableColumn<Personne, String> col1;
+    @FXML
+    private TableColumn<Personne, String> col2;
+    @FXML
+    private TableColumn<Personne, String> col3;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
+
+    public void tableau(){
+        tableview.setItems(contexteId.getPersonnes().getListe());
+        col1.setCellValueFactory(new PropertyValueFactory<>("login"));
+        col2.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        col3.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+    }
     
     @FXML
     private void profil(ActionEvent event) {
@@ -62,13 +80,13 @@ public class AccueilController implements Initializable {
         alert.setTitle("Infos");
         alert.setHeaderText("Login : "+ this.contexte.getPersonne().getLogin());
         alert.setContentText("Nom : " + this.contexte.getPersonne().getNom());
-
         alert.showAndWait();
     }
     
     public void setContexte(ContexteIdentification contexte, ContexteAvatar contexte1){
         this.contexteId = contexte;
         this.contexte = contexte1;
+        this.tableau();
     }
 
     @FXML
